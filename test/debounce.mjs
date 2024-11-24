@@ -33,11 +33,11 @@ await test("debounce basic", async (t) => {
                 dafunc()
             }
 
-            dafunc.cancel()
+            setTimeout(dafunc.cancel, 50)
 
             await new Promise(
                 (r, j) => setTimeout(() => {
-                    equal(counter, 0)
+                    equal(counter, 0, "Counter should not have been incremented")
                     equal(dafunc.pending(), false)
                     r(true)
                 }, 150)

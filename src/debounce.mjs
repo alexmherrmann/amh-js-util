@@ -27,11 +27,10 @@ export function debounced(func, delay) {
      */
     let awaiter = false;
 
-    /** @type {unknown[]} */
+    /** @type {Parameters<func>} */
     let lastArgs = [];
 
     /**
-     * 
      * @param {Parameters<func>} args 
      */
     const debounced = (...args) => {
@@ -69,5 +68,8 @@ export function debounced(func, delay) {
 
 
 /**
- * Creates a throttled
+ * Creates a buffered debounced version of a function that delays its
+ * execution until after the specified delay in milliseconds has passed
+ * since the last time it was invoked. When, internally, the function
+ * is invoked, it will be invoked with an array of all the arguments
  */
