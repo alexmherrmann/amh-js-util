@@ -1,0 +1,12 @@
+{
+    "include": ["src/*.mjs", "test/*.mjs"],
+    "compilerOptions": {
+        "strict": true,
+        "strictNullChecks": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": true,
+        "checkJs": true,
+        "noEmit": true,
+        "module": "Node16"
+    }
+}
